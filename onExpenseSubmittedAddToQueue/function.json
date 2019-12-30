@@ -16,10 +16,17 @@
     },
     {
       "type": "queue",
-      "direction": "out",
       "name": "outputQueueExpenseReceived",
-      "queueName": "expense-data",
-      "connection": "AzureWebJobsStorage"
+      "queueName": "expense-data-received",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    },
+    {
+      "type": "queue",
+      "name": "outputQueueExpenseReceivedToCreatePdf",
+      "queueName": "expense-data-received-to-create-pdf",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
     }
   ]
 }

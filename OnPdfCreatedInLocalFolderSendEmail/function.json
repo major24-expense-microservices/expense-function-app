@@ -8,10 +8,19 @@
       "connection": "AzureWebJobsStorage"
     },
     {
+      "type": "sendGrid",
+      "name": "message",
+      "direction": "out",
+      "apiKey": "mnalliahSGridApikey",
+      "from": "majuurnalliah@gmail.com",
+      "subject": "Expense Report (MS)",
+      "text": "Expense submitted (MS)"
+    },
+    {
       "type": "queue",
       "direction": "out",
-      "name": "outputQueuePdfUploadedToStorage",
-      "queueName": "pdf-uploaded-to-storage",
+      "name": "outputQueuePdfEmailedToUser",
+      "queueName": "pdf-emailed-to-user",
       "connection": "AzureWebJobsStorage"
     }
   ],
