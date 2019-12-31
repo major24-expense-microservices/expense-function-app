@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # expensejs-fn
 
 ## Azure function app with Node JS/Javascript for expense app. When a user submits expense, below functions (serverless) should run in squence.
@@ -8,10 +7,16 @@
 #### [OUTPUT] Queue: [expense-data], Name: outputQueueExpenseReceived
 #### What it does: Writes the incoming data queue, so it can be processed. { "userId": "user1", "expenseId": 1 }
 #### To test from PShell.
-`iwr -Method POST `
--Uri https://mn-expen..-js-fnapp.azu..ewebs..es.net/ap./onExp...Subm....ToQue..?code=<<...get from azure...>>`
--Headers @{ "content-type"="application/json" } `
--Body '{ "userId": "user1", "expenseId": "1" }'`
+    // Create expense object to reflect
+    /** iwr - Method POST - Uri https://ms-expense-react-func-app.azurewebsites.net/api/onExpenseSubmittedAddToQueue?code=<......>
+      * -Headers @{ "content-type"="application/json" }
+      * -Body '{"user": {"userId": "user1","email": "maj@gmail.com"},
+      *          "expenseId": 2,
+      *          "expenseItems": [
+      *                  { "id": "aa2612d0-626c-4fbc-bd2c-052837a9fa0e", "status": "Processed1" }, {"id": "c5204ebf-23fe-40e3-b582-4887cebdf796", "status": "Processed1"}
+      *                  ]
+      *        }'`
+      */
 
 
 ### Function: onExpenseReceivedInQueueCreatePdf
@@ -34,7 +39,4 @@
 #### [INPUT]: Queue trigger by [pdf-emailed-to-user]
 #### [OUTPUT]: None
 #### What it does: Removes the file from local folder
-=======
-# expense-function-app
-Azure functions for queue and transactions updates
->>>>>>> a815e4095369fd408d00c8a41d3fd8a8a900cbc5
+
