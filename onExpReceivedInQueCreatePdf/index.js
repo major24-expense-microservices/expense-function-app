@@ -5,7 +5,7 @@ const pdfModule = require('../pdfCreator/pdfModule');
 module.exports = async function (context, queueData) {
   context.log('JavaScript queue trigger function processed work item', queueData);
   let expenseId = queueData.expenseId;
-  if (!expenseId || !queueData.user.userId) {
+  if (!expenseId || !queueData.user.UserId) {
     context.log('User id and Expense id is required');
     return
   };

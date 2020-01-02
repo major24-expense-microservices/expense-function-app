@@ -2,13 +2,9 @@ const axios = require('axios');
 const settings = require('../local.settings.json');
 
 module.exports = async function (context, queueItem) {
-    context.log('JavaScript queue trigger function processed work item', queueItem);
-    let expenseId = queueItem.expenseId;
-    if (!expenseId) {
-        context.log('Expense id is required');
-        return;
-    };
+    context.log('JavaScript queue trigger function processed work item');
     let expenseItems = queueItem.expenseItems;
+    context.log(`Data received in queue to update trans: ${JSON.stringify(expenseItems)}`);
     if (!expenseItems || expenseItems.length === 0) {
         context.log('expenseItems are required');
         return;

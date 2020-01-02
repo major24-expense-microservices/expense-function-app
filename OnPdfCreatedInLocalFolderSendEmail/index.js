@@ -16,13 +16,13 @@ const axios = require('axios');
 // // }
 module.exports = async function (context, queueData) {
     context.log('>>>>', queueData);
-    if (!queueData.expenseId || !queueData.user.userId || !queueData.fileName) {
+    if (!queueData.expenseId || !queueData.user.UserId || !queueData.fileName) {
       context.log('User id, Expense id and fileName are required');
       return
     };
     const expenseId = queueData.expenseId;
     context.log('JS triggered by onPdfCreatedInLocalFolderUploadedToStorage ', expenseId);
-    const usersApiUrl = settings.Api.Users+'/'+queueData.user.userId;
+    const usersApiUrl = settings.Api.Users+'/'+queueData.user.UserId;
     context.log('Api url to get user info: ', usersApiUrl);
     let user;
     try {
